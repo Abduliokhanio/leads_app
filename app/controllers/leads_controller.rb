@@ -1,5 +1,7 @@
 class LeadsController < ApplicationController
+
   def index
+    binding.pry
     @leads = Lead.all
   end
 

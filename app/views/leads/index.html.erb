@@ -1,8 +1,16 @@
 <h1>Leads#index</h1>
 <p>Find me in app/views/leads/index.html.erb</p>
+<%= link_to "Sign Out", destroy_owner_session_path, method: :delete %>
+<%= link_to "Create Lead"%>
+<br>
+<br>
+
 All the leads here
+<br>
+<br>
 
 <br>
 <% @leads.each do |lead| %>
     <%=lead.lead_name%><br>
 <% end %>
+
