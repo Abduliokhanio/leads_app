@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :owners
+  
   resources :owners do 
     resources :leads do 
       resources :notes 

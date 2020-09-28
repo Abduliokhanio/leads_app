@@ -1,2 +1,21 @@
 <h1>Leads#new</h1>
 <p>Find me in app/views/leads/new.html.erb</p>
+
+<%= form_for @lead, url: owner_leads_path(@owner) do |f| %>
+  <%= f.label :lead_name %>:
+  <%= f.text_field :lead_name %><br />
+
+  <%= f.label :lead_number %>:
+  <%= f.text_field :lead_number %><br />
+
+  <%= f.label :lead_email %>:
+  <%= f.text_field :lead_email %><br />
+
+  <%= f.label :lead_web %>:
+  <%= f.text_field :lead_web %><br />
+
+  <%= f.label :lead_temp %>:
+  <%= f.text_field :lead_temp %><br />
+
+  <%= f.submit "Submit" %>
+<% end %>
