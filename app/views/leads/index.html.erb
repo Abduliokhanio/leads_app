@@ -11,6 +11,6 @@ All the leads here
 
 <br>
 <% @leads.each do |lead| %>
-    <%=lead.lead_name%><%= link_to "Show", owner_lead_path(lead.owner_id, lead.id) %><br>
+    <%=lead.lead_name%><%= link_to "Read", owner_lead_path(lead.owner_id, lead.id) %> <%= link_to "Update", edit_owner_lead_path(lead.owner_id, lead.id) %> <%= link_to "Delete", owner_lead_path(lead.owner_id, lead.id), method: :delete %><br>
 <% end %>
 
