@@ -12,9 +12,11 @@ All the leads here
 <br>
 <table>
     <tr>
-        <th>Lead name</th>
-        <th>Lead status</th>
-        <th>Lead owner</th>
+        <th>Lead-name</th>
+        <th>Lead-status</th>
+        <th>Lead-owner</th>
+        <th>Created-at</th>
+        <th>Updated-at</th>
         <th>Read</th>
         <th>Update</th>
         <th>Delete</th>
@@ -24,6 +26,8 @@ All the leads here
             <td><%=lead.lead_name%></td>
             <td><%=lead.lead_temp%></td>
             <td><%=lead.owner.name%></td>
+            <td><%=lead.created_at.strftime("%m/%d/%Y %I:%M%p")%></td>
+            <td><%=lead.updated_at.strftime("%m/%d/%Y %I:%M%p")%></td>
             <td><%= link_to "Read", owner_lead_path(lead.owner_id, lead.id) %></td>
             <td><%= link_to "Update", edit_owner_lead_path(lead.owner_id, lead.id) %></td>
             <td><%= link_to "Delete", owner_lead_path(lead.owner_id, lead.id), method: :delete %><br></td>
