@@ -10,7 +10,23 @@ All the leads here
 <br>
 
 <br>
-<% @leads.each do |lead| %>
-    <%=lead.lead_name%><%= link_to "Read", owner_lead_path(lead.owner_id, lead.id) %> <%= link_to "Update", edit_owner_lead_path(lead.owner_id, lead.id) %> <%= link_to "Delete", owner_lead_path(lead.owner_id, lead.id), method: :delete %><br>
-<% end %>
-
+<table>
+    <tr>
+        <th>Lead name</th>
+        <th>Lead status</th>
+        <th>Lead owner</th>
+        <th>Read</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    <% @leads.each do |lead| %>
+        <tr>
+            <td><%=lead.lead_name%></td>
+            <td><%=lead.lead_temp%></td>
+            <td><%=lead.owner.name%></td>
+            <td><%= link_to "Read", owner_lead_path(lead.owner_id, lead.id) %></td>
+            <td><%= link_to "Update", edit_owner_lead_path(lead.owner_id, lead.id) %></td>
+            <td><%= link_to "Delete", owner_lead_path(lead.owner_id, lead.id), method: :delete %><br></td>
+        </tr>
+    <% end %>
+</table>
