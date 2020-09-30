@@ -11,4 +11,4 @@
 <%=@lead.lead_web%>
 <h3>Lead Temperature</h3>
 <%=@lead.lead_temp%>
-<h3>Lead Notes</h3>
+<h3>Lead Notes</h3><%= link_to "Add Note", new_owner_lead_note_path(@owner, @lead)%>

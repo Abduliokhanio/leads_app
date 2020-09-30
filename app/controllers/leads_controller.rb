@@ -23,6 +23,7 @@ class LeadsController < ApplicationController
 
   def show
     @lead = Lead.find_by(id: params["id"])
+    @owner = Owner.find_by(id: session["warden.user.owner.key"][0])
   end
 
   def edit

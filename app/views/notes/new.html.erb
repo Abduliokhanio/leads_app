@@ -1,2 +1,12 @@
 <h1>Notes#new</h1>
 <p>Find me in app/views/notes/new.html.erb</p>
+
+<%= form_for @note, url: owner_lead_notes_path(@owner, @lead) do |f| %>
+  <%= f.label :title %>:
+  <%= f.text_field :title %><br />
+
+  <%= f.label :description %>:
+  <%= f.text_field :description %><br />
+
+  <%= f.submit "Submit" %>
+<% end %>
